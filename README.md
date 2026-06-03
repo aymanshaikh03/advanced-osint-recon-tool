@@ -90,6 +90,23 @@ Export results.
 
 ---
 
+## Domain Recon Example
+
+![Domain Recon](screenshots/Domain Recon.png)
+
+[TXT Report](screenshots/domain_report.txt)
+
+## IP Investigation Example
+
+![IP Recon](screenshots/ip_recon.png)
+
+[JSON Report](screenshots/ip_report.json)
+
+## Username Investigation Example
+
+![Username Recon](screenshots/username_recon.png)
+
+
 ## Educational Disclaimer
 
 This project is intended ONLY for:
