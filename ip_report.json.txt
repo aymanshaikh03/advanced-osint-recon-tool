@@ -1,0 +1,83 @@
+
+══════════════════════════════════════════════════════════════
+  OSINT RECON SCAN  ·  2026-06-03 14:48:36
+  Target Domain/IP : 8.8.8.8
+  Target Username  : —
+  Scan Mode        : Fast
+══════════════════════════════════════════════════════════════
+
+
+  ━━━  📡  IP & GEOLOCATION INTELLIGENCE  ━━━
+
+  Hostname  : 8.8.8.8
+  Resolved  : 8.8.8.8
+
+  ┌─ GEOLOCATION (ip-api.com fallback) ──────────────────
+  │  Country   : United States (US)
+  │  Region    : Virginia (VA)
+  │  City      : Ashburn
+  │  Latitude  : 39.03
+  │  Longitude : -77.5
+  │  Timezone  : America/New_York
+  │  ISP       : Google LLC
+  │  Org       : Google Public DNS
+  │  ASN       : AS15169 Google LLC
+  │  Hosting   : Yes  Proxy: No  Mobile: No
+  └──────────────────────────────────────────
+
+  🗺  Google Maps: https://maps.google.com/?q=39.03,-77.5
+
+
+  ━━━  🗂  WHOIS / RDAP LOOKUP  ━━━
+
+  [!] RDAP lookup failed (status=404). Domain may be unregistered or TLD unsupported.
+
+  🔗 ViewDNS Reverse WHOIS: https://viewdns.info/reversewhois/?q=8.8.8.8
+
+
+  ━━━  🔌  PORT SCANNER  ━━━
+
+  Target : 8.8.8.8
+  Mode   : FAST (0.7s timeout)
+  Ports  : 30
+
+  [closed] 21     FTP
+  [closed] 22     SSH
+  [closed] 23     Telnet
+  [closed] 25     SMTP
+  [OPEN]   53     DNS            [HIGH]
+  [closed] 80     HTTP
+  [closed] 110    POP3
+  [closed] 143    IMAP
+  [OPEN]   443    HTTPS          [HIGH]
+  [closed] 445    SMB
+  [closed] 993    IMAPS
+  [closed] 995    POP3S
+  [closed] 1433   MSSQL
+  [closed] 1521   Oracle
+  [closed] 2222   SSH-Alt
+  [closed] 3306   MySQL
+  [closed] 3389   RDP
+  [closed] 4443   HTTPS-Alt2
+  [closed] 5432   Postgres
+  [closed] 5900   VNC
+  [closed] 6379   Redis
+  [closed] 6667   IRC
+  [closed] 8000   HTTP-Dev
+  [closed] 8080   HTTP-Alt
+  [closed] 8081   HTTP-Alt2
+  [closed] 8443   HTTPS-Alt
+  [closed] 8888   Jupyter
+  [closed] 9090   Prometheus
+  [closed] 9200   Elastic
+  [closed] 27017  MongoDB
+
+  ┌─ RESULTS
+  │  Open  : 2  [53, 443]
+  │  Closed: 28
+  └──────────────────────────────────────────
+
+══════════════════════════════════════════════════════════════
+  SCAN COMPLETE  ·  2026-06-03 14:48:41
+    HTTP Requests — Total: 3  Success: 3  Timeout: 0  Failed: 0
+══════════════════════════════════════════════════════════════

@@ -1,0 +1,135 @@
+
+══════════════════════════════════════════════════════════════
+  OSINT RECON SCAN  ·  2026-06-03 15:11:40
+  Target Domain/IP : example.com
+  Target Username  : johndoe
+  Scan Mode        : Fast
+══════════════════════════════════════════════════════════════
+
+
+  ━━━  🗂  WHOIS / RDAP LOOKUP  ━━━
+
+  Domain      : EXAMPLE.COM
+  Status      : client delete prohibited, client transfer prohibited, client update prohibited
+  Registered : 1995-08-14
+  Expires    : 2026-08-13
+  Updated    : 2026-01-16
+  Nameservers : ELLIOTT.NS.CLOUDFLARE.COM, HERA.NS.CLOUDFLARE.COM
+Registrar  : RESERVED-Internet Assigned Numbers Authority
+  RDAP URL    : https://rdap.org/domain/example.com
+
+  🔗 ViewDNS Reverse WHOIS: https://viewdns.info/reversewhois/?q=example.com
+
+
+  ━━━  🌐  DNS DEEP DIVE  ━━━
+
+  [A    ]
+         → 104.20.23.154
+         → 172.66.147.243
+  [AAAA ]
+         → 2606:4700:10::ac42:93f3
+         → 2606:4700:10::6814:179a
+  [NS   ]
+         → hera.ns.cloudflare.com.
+         → elliott.ns.cloudflare.com.
+  [MX   ]
+         → 0 .
+  [TXT  ]
+         → v=spf1 -all
+         → _k2n1y4vw3qtb4skdx9e7dxt97qrmmq9
+  [SOA  ]
+         → elliott.ns.cloudflare.com. dns.cloudflare.com. 2405749864 10000 2400 604800 1800
+  [CNAME]  (no records)
+
+  ┌─ EMAIL SECURITY RECORDS
+  │  SPF   : v=spf1 -all
+  │  DMARC : v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s
+  │  DKIM  : Check default._domainkey.example.com
+  └──────────────────────────────────────────
+
+  Reverse DNS (104.20.23.154): N/A
+
+
+  ━━━  🔍  SUBDOMAIN ENUMERATION  ━━━
+
+  ✓  No wildcard DNS detected
+
+  [1/2] Certificate Transparency (crt.sh) ...
+  No CT log data retrieved (rate limit or offline)
+
+  [2/2] Wordlist brute-force (52 entries) ...
+    [WL] www.example.com                               → 172.66.147.243     HTTPS✓  [HIGH]
+
+  ┌─ SUMMARY
+  │  Total resolved subdomains : 1
+  │  Confidence HIGH           : 1
+  │  Confidence MEDIUM         : 0
+  │  Confidence LOW            : 0
+  │  Unique IPs discovered     : 1
+  │    172.66.147.243
+  └──────────────────────────────────────────
+
+
+  ━━━  🧬  HTTP HEADERS & TECH FINGERPRINT  ━━━
+
+  Probing https://example.com ...
+
+  HTTP Status  : 200
+  URL          : https://example.com
+
+  ┌─ SECURITY HEADERS
+  │  ✗ HSTS                       : MISSING
+  │  ✗ CSP                        : MISSING
+  │  ✗ Clickjack Protection       : MISSING
+  │  ✗ XSS Protection             : MISSING
+  │  ✗ MIME Sniff Block           : MISSING
+  │  ✗ Referrer Policy            : MISSING
+  │  ✗ Permissions Policy         : MISSING
+  └────────────────────────────────────────────
+
+  ┌─ SERVER & TECHNOLOGY HEADERS
+  │  Server                         : cloudflare
+  │  CF-RAY                         : a05dbec20cce4254-BOM
+  └────────────────────────────────────────────
+
+  ┌─ TECHNOLOGY DETECTION
+  │  ✓ Cloudflare
+  └────────────────────────────────────────────
+
+
+  ━━━  🔐  SSL / TLS CERTIFICATE INSPECTOR  ━━━
+
+  [!] No cert retrieved (possibly no HTTPS)
+
+  ━━━  🧠  CORRELATION & INTELLIGENCE SUMMARY  ━━━
+
+  ┌─ INFRASTRUCTURE CLUSTERING
+  │  Primary IP   : 104.20.23.154
+  │  ASN / Org    : Unknown  Unknown
+  └────────────────────────────────────────────
+
+  ┌─ TECHNOLOGY PROFILE
+  │  ✓ Cloudflare
+  └────────────────────────────────────────────
+
+  ┌─ SECURITY POSTURE
+  │  Observations Severity:
+  │    High Findings   : 0
+  │    Medium Findings : 2
+  │    Low Findings    : 1
+  │
+  │  🟡  [MEDIUM]  CSP header missing — elevated XSS risk
+  │  🟡  [MEDIUM]  HSTS missing — HTTPS not enforced
+  │  🟢  [LOW]  1 HIGH-confidence subdomains discovered
+  └────────────────────────────────────────────
+
+  ┌─ ACTIONABLE INTELLIGENCE
+  │  2 item(s) warrant follow-up:
+  │    🟡  [MEDIUM]  CSP header missing — elevated XSS risk
+  │    🟡  [MEDIUM]  HSTS missing — HTTPS not enforced
+  └────────────────────────────────────────────
+
+══════════════════════════════════════════════════════════════
+  SCAN COMPLETE  ·  2026-06-03 15:12:02
+    HTTP Requests — Total: 12  Success: 12  Timeout: 0  Failed: 0
+══════════════════════════════════════════════════════════════
