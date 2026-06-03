@@ -92,7 +92,7 @@ Export results.
 
 ## Domain Recon Example
 
-![Domain Recon](screenshots/Domain Recon.png)
+![Domain Recon](screenshots/domain_recon.png)
 
 [TXT Report](screenshots/domain_report.txt)
 
